@@ -2,20 +2,20 @@
 
 This project aims to measure the execution time and memory usage of a Spark application in two cluster configurations.
 
-## Run project
+## Run experiments
 
 1. Create virtual environment
     ```bash
-    python3.10 -m venv venv
-    source ./venv/bin/activate
+    python3.10 -m venv experiments_venv
+    source experiments_venv/bin/activate
     ```
 2. Install required dependencies
     ```bash
     pip install -r requirements.txt
     ```
-3. Download dataset from [Google Drive](https://drive.google.com/file/d/1r5NaERzCJXFg14J2Dvnyk4dwdY11Nikn/view?usp=sharing).
+3. Download dataset from [Google Drive](https://drive.google.com/file/d/1r5NaERzCJXFg14J2Dvnyk4dwdY11Nikn/view?usp=sharing)
 
-4. Run project
+4. Run the following script
     ```
    bash run_experiments.sh
     ```
@@ -25,7 +25,17 @@ This project aims to measure the execution time and memory usage of a Spark appl
 
    * Sets up a cluster with 3 DataNodes and repeats the experiments
 
-5. To make visualization run the following script
+## Run visualization
+1. Create virtual environment
+    ```bash
+    python3.10 -m venv visualization_venv
+    source visualization_venv/bin/activate
+    ```
+2. Install required dependencies
+    ```bash
+    pip install -r spark_app/requirements.txt
+    ```
+3. Run the following script
    ```bash
    python visualize_results.py
    ```
@@ -33,7 +43,7 @@ This project aims to measure the execution time and memory usage of a Spark appl
 
 ## Demonstration of the results
 
-The charts show that optimizations have significantly sped up table operations due to overhead at the beginning.
+The charts show that optimizations have sped up table operations, although they have added an overhead at the beginning.
 
 ![image](results/ops_time.png)
 ![image](results/total_time.png)
